@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-   <!--     <meta-data
+        <!--     <meta-data
             android:name="asset_statements"
             android:resource="@string/asset_statements" />-->
 
@@ -21,16 +21,23 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
                     android:scheme="https"
                     android:host="example.com" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
-             <!--   <data
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
                     android:scheme="http"
-                    android:host="example.com" />-->
+                    android:host="example.com" />
             </intent-filter>
 
         </activity>

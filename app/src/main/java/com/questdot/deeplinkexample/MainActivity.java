@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         handleIntent(getIntent());
 
+        // ATTENTION: This was auto-generated to handle app links.
     }
 
     protected void onNewIntent(Intent intent) {
@@ -29,17 +30,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void handleIntent(Intent intent) {
+
         String appLinkAction = intent.getAction();
-        try {
         String appLinkData = intent.getDataString();
+        try {
+            if (Intent.ACTION_VIEW.equals(appLinkAction) && appLinkData != null) {
 
-        if(appLinkData!= null){
+                String afterDecode = URLDecoder.decode(appLinkData, "UTF-8");
 
-            String afterDecode = URLDecoder.decode(appLinkData, "UTF-8");
+                Toast.makeText(getApplicationContext(),afterDecode,Toast.LENGTH_LONG).show();
 
-            Toast.makeText(getApplicationContext(),afterDecode,Toast.LENGTH_LONG).show();
 
-        } } catch (UnsupportedEncodingException e) {
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
